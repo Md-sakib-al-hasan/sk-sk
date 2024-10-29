@@ -35,6 +35,10 @@ async function run() {
            const data = await movies.find().toArray()
            res.send(data);
     })
+    app.get("/usk",async(req,res)=> {
+      const data = await movies.find().toArray()
+      res.send(data);
+})
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
