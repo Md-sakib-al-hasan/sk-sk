@@ -51,7 +51,10 @@ run().catch(console.dir);
 
 
 app.get("/",(req,res) => {
-    res.send('hellow world')
+    res.send('hellow afaworld')
+})
+app.get("/a",(req,res) => {
+  res.send('hellow afaworld')
 })
 
 app.listen(port, () => {
