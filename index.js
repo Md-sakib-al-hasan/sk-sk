@@ -48,7 +48,7 @@ run().catch(console.dir);
 
 
 app.get("/",(req,res) => {
-    res.send('hellow afaworld')
+    res.send('hellow world')
 })
 
 app.get("/sk",(req,res) => {
