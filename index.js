@@ -31,20 +31,17 @@ async function run() {
     const database = client.db("Cars-doctors");
     const movies = database.collection("booking");
 
-    app.get("/sk",async(req,res)=> {
+    app.get("/booking",async(req,res)=> {
            const data = await movies.find().toArray()
            res.send(data);
     })
-    app.get("/usk",async(req,res)=> {
-      const data = await movies.find().toArray()
-      res.send(data);
-})
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
-    await client.close();
+    // await client.close();
   }
 }
 run().catch(console.dir);
@@ -53,9 +50,7 @@ run().catch(console.dir);
 app.get("/",(req,res) => {
     res.send('hellow afaworld')
 })
-app.get("/a",(req,res) => {
-  res.send('hellow afaworld')
-})
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
